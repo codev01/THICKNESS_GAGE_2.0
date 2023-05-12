@@ -1,0 +1,169 @@
+﻿<Window
+    x:Class="ThicknessGage2_0.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Инф. привязка толщиномер"
+    Width="580"
+    Height="350"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid Margin="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel
+                Grid.Column="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" Text="Сообщений отправлено" />
+                <TextBlock
+                    x:Name="msgIndex"
+                    Text="12345"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+            <ToggleButton
+                x:Name="s_button"
+                Grid.Column="1"
+                Width="120"
+                Background="LightSteelBlue"
+                Click="S_button_Click"
+                Content="Start" />
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    x:Name="restartBlock"
+                    Grid.Column="0"
+                    VerticalAlignment="Center">
+                    <TextBlock Text="Перезапуск через:" TextAlignment="Center" />
+                    <TextBlock
+                        x:Name="restartIndex"
+                        Text="12345"
+                        TextAlignment="Center" />
+                </StackPanel>
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Vertical">
+                    <Button Click="ReadConfig_Button_Click">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center">
+                                Read<LineBreak />
+                                .config</TextBlock>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Border
+            Grid.Row="1"
+            Height="1"
+            Margin="4"
+            Background="Gray" />
+        <TextBox
+            x:Name="rootTextBlock"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            BorderThickness="0"
+            IsReadOnly="True"
+            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <Border
+            Grid.Row="3"
+            Height="1"
+            Margin="4"
+            Background="Gray" />
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse
+                        x:Name="indicator_TelegramLength"
+                        Width="15"
+                        Height="15"
+                        Fill="Red" />
+                    <TextBlock
+                        Margin="4,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Получаемые сообщения протокольной длины" />
+                </StackPanel>
+                <StackPanel Margin="0,4,0,0" Orientation="Horizontal">
+                    <Ellipse
+                        x:Name="indicator_SendingMessages"
+                        Width="15"
+                        Height="15"
+                        Fill="Red" />
+                    <TextBlock
+                        Margin="4,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Отправка сообщений" />
+                </StackPanel>
+                <StackPanel Margin="0,4,0,0" Orientation="Horizontal">
+                    <Ellipse
+                        x:Name="indicator_WriteToDataBase"
+                        Width="15"
+                        Height="15"
+                        Fill="Red" />
+                    <TextBlock
+                        Margin="4,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Запись в базу" />
+                </StackPanel>
+            </StackPanel>
+            <Border
+                Grid.Column="1"
+                Width="1"
+                Margin="4"
+                Background="Gray" />
+            <StackPanel Grid.Column="2" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="Протокольная длина:" />
+                    <TextBlock
+                        x:Name="configuration_TelegramLength"
+                        Margin="4,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="12345" />
+                </StackPanel>
+                <StackPanel Margin="0,4,0,0" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="CoilID_MSG_Length:" />
+                    <TextBlock
+                        x:Name="configuration_CoilID_MSG_Length"
+                        Margin="4,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="12345" />
+                </StackPanel>
+                <StackPanel Margin="0,4,0,0" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="CoilID_MSG_Offset:" />
+                    <TextBlock
+                        x:Name="configuration_CoilID_MSG_Offset"
+                        Margin="4,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="12345" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+ANGC_PROD_GTW = 
+    (DESCRIPTION = 
+        (SOURCE_ROUTE = YES)
+        (ADDRESS = (PROTOCOL = TCP)(HOST = phl-dbgw.severstal.severstalgroup.com)(PORT = 1520))
+        (ADDRESS = (PROTOCOL = TCP)(HOST = 10.96.163.1)(PORT = 1521))
+        (CONNECT_DATA = (SERVICE_NAME=CGL_S))
+)
+
+CPM1CGL2L2 =
+  (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)
+                            (HOST = localhost)
+                            (PORT = 1521))
+                 (CONNECT_DATA = (SERVER = DEDICATED)
+                                 (SERVICE_NAME = CGL_S)))
